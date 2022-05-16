@@ -120,13 +120,13 @@ export const BlogSEO = ({
   title,
   summary,
   date,
-  lastmod,
+  lastMod,
   url,
   images = [],
   canonicalUrl,
 }: BlogSeoProps) => {
   const publishedAt = new Date(date).toISOString()
-  const modifiedAt = new Date(lastmod || date).toISOString()
+  const modifiedAt = new Date(lastMod || date).toISOString()
   const imagesArr =
     images.length === 0
       ? [siteMetadata.socialBanner]
@@ -195,7 +195,7 @@ export const BlogSEO = ({
         {date && (
           <meta property='article:published_time' content={publishedAt} />
         )}
-        {lastmod && (
+        {lastMod && (
           <meta property='article:modified_time' content={modifiedAt} />
         )}
         <script
