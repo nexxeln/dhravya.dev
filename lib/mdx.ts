@@ -36,6 +36,9 @@ export function getFiles(type: 'blog' | 'authors') {
 }
 
 export function formatSlug(slug: string) {
+  if (slug.endsWith('index.mdx')) {
+    return slug.replace(/\.(mdx|md)/, '').replace(/index$/, '')
+  }
   return slug.replace(/\.(mdx|md)/, '')
 }
 
@@ -49,11 +52,40 @@ export async function getFileBySlug(
   type: 'authors' | 'blog',
   slug: string | string[],
 ) {
+  type loc = 'folder' | 'mdx' | 'md' | null
+
+  let loca: loc = null
+
   const mdxPath = path.join(root, 'data', type, `${slug}.mdx`)
   const mdPath = path.join(root, 'data', type, `${slug}.md`)
-  const source = fs.existsSync(mdxPath)
-    ? fs.readFileSync(mdxPath, 'utf8')
-    : fs.readFileSync(mdPath, 'utf8')
+
+  // if (fs.existsSync(mdxPath)) {
+  //   fs.existsSync(mdPath) ? loca = "md"
+  // }
+  // if (!source) {
+  //   source = fs.existsSync(
+  //     path.join(root, 'data', 'blog', `${slug}`, 'index.mdx'),
+  //   )
+  // }
+
+  if (fs.existsSync(mdxPath)) {
+    loca = 'mdx'
+  } else if (fs.existsSync(mdPath)) {
+    loca = 'md'
+  } else if (
+    fs.existsSync(path.join(root, 'data', 'blog', `${slug}`, 'index.mdx'))
+  ) {
+    loca = 'folder'
+  }
+
+  const source = fs.readFileSync(
+    loca == 'mdx'
+      ? mdxPath
+      : loca == 'md'
+      ? mdPath
+      : path.join(root, 'data', 'blog', `${slug}`, 'index.mdx'),
+    'utf8',
+  )
 
   // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
   if (process.platform === 'win32') {
@@ -143,6 +175,7 @@ export async function getAllFilesFrontMatter(folder: 'blog') {
     const source = fs.readFileSync(file, 'utf8')
     const matterFile = matter(source)
     const frontmatter = matterFile.data as AuthorFrontMatter | PostFrontMatter
+
     if ('draft' in frontmatter && frontmatter.draft !== true) {
       allFrontMatter.push({
         ...frontmatter,

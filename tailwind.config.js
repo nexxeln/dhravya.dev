@@ -5,6 +5,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
+  safelist: [
+    {
+      pattern: /bg-(yellow|green|blue)-300/,
+    },
+  ],
   content: [
     './pages/**/*.tsx',
     './components/**/*.tsx',

@@ -103,31 +103,40 @@ export default function PostLayout({
         <div className='xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700'>
           <header className='pt-2 xl:pb-6 relative min-h-screen'>
             <motion.div
-              animate={{ y: [-5, 0, 5, 0, -5] }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-                ease: 'easeInOut',
-                delay: 0.5,
-              }}
-              className='md:absolute relative md:right-10 md:bottom-20 top-10  md:top-auto md:mx-0'
+              initial={{ x: -50 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.3, type: 'spring' }}
+              className='md:absolute z-10 relative md:right-10 md:bottom-20 top-10  md:top-auto md:mx-0'
             >
-              {ogImage && (
-                <div className='md:w-[40vw] mx-10'>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={ogImage} className='rounded-lg' alt={''} />
-                </div>
-              )}
+              <motion.div
+                animate={{ y: [-5, 0, 5, 0, -5] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: 'easeInOut',
+                  delay: 0.5,
+                }}
+              >
+                {ogImage && (
+                  <div className='md:w-[40vw] mx-10'>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={ogImage} className='rounded-lg' alt={''} />
+                  </div>
+                )}
+              </motion.div>
             </motion.div>
-            <div
-              className={`flex justify-between mx-8 md:mx-16 mt-5 p-8 md:p-20 rounded-xl  md:h-[75vh] md:w-[75vw]  ${
+            <motion.div
+              initial={{ x: 50 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.3, type: 'spring' }}
+              className={`flex justify-between mx-8 md:mx-16 mt-5 p-8 md:p-20 rounded-xl  md:min-h-[75vh] md:w-[75vw]  ${
                 classes[topic ? topic : 'programming']
               }`}
             >
               <div className='mt-10 md:mt-0'>
                 <div className='inline-flex items-center h-min gap-2'>
                   <span className='rounded-full bg-blue-500 px-3 text-white text-sm py-1'>
-                    {topic.toUpperCase()}
+                    {topic?.toUpperCase()}
                   </span>
                   <span className='text-sm text-gray-500'>
                     {new Date(date).toLocaleDateString(
@@ -140,7 +149,7 @@ export default function PostLayout({
                   <h1 className='font-poppins font-extrabold text-4xl mb-5'>
                     {title}
                   </h1>
-                  <div className='md:w-[50vw] text-xl'>{summary}</div>
+                  <div className='md:w-1/2 text-xl'>{summary}</div>
                   <div className='w-fit '>
                     {/* Divider */}
                     <div className='w-full h-px bg-gray-200 mt-10'> </div>
@@ -150,7 +159,7 @@ export default function PostLayout({
               </div>
 
               <div className='hidden md:block'>{icons[topic]}</div>
-            </div>
+            </motion.div>
           </header>
 
           <SectionContainer>
