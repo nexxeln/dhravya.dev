@@ -28,6 +28,7 @@ function Projects({
             return (
               <PElement
                 key={project.title}
+                topic='project'
                 custom_icon={
                   project.iconType === 'image' ? (
                     <Image
@@ -42,7 +43,6 @@ function Projects({
                     project.icon
                   )
                 }
-                topic={'project'}
                 title={project.title}
                 description={project.description}
                 className={project.className}

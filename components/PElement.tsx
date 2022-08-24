@@ -84,7 +84,7 @@ function PElement({
             {tags &&
               tags.slice(0, 2).map((tag, index) => (
                 <div key={tag}>
-                  <span className='rounded-full px-2 bg-blue-300 mx-1 text-xs sm:text-sm py-1 text-slate-600'>
+                  <span className='rounded-full px-2 bg-blue-300 mx-1 text-xs sm:text-sm py-1 text-slate-600 border border-blue-400'>
                     {tag}
                   </span>
                 </div>
@@ -98,7 +98,13 @@ function PElement({
           >
             {title}
           </div>
-          <div className='mx-2 mb-5 text-slate-300 md:mx-5'>{description}</div>
+          <div
+            className={`mx-2 mb-5 text-slate-800 md:mx-5 ${
+              topic === 'project' && 'text-slate-200'
+            }`}
+          >
+            {description}
+          </div>
         </div>
       </a>
     </Link>

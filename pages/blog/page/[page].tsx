@@ -1,3 +1,5 @@
+import Blogs from '@/components/Blogs'
+import Navbar from '@/components/Navbar'
 import { PageSEO } from '@/components/helpers/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
@@ -59,17 +61,20 @@ export default function PostPage({
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
+    <div className='bg-purplishBackground'>
       <PageSEO
         title={siteMetadata.title}
         description={siteMetadata.description}
       />
-      <ListLayout
+      <Navbar />
+
+      <Blogs
+        total={50}
         posts={posts}
+        fullscreen={true}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title='All Posts'
       />
-    </>
+    </div>
   )
 }

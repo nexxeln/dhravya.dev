@@ -1,12 +1,16 @@
+import { useState } from 'react'
+
+import Blogs from '@/components/Blogs'
+import Navbar from '@/components/Navbar'
 import { PageSEO } from '@/components/helpers/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import type ListLayout from '@/layouts/ListLayout'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import type { ComponentProps } from 'react'
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 6
 
 export const getStaticProps: GetStaticProps<{
   posts: ComponentProps<typeof ListLayout>['posts']
@@ -29,17 +33,21 @@ export default function Blog({
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
+    <div className='bg-purplishBackground'>
       <PageSEO
         title={`Blog - ${siteMetadata.author}`}
         description={siteMetadata.description}
       />
-      <ListLayout
+
+      <Navbar />
+
+      <Blogs
+        total={50}
         posts={posts}
+        fullscreen={true}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title='Blog'
       />
-    </>
+    </div>
   )
 }
