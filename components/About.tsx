@@ -8,11 +8,11 @@ import CustomLink from './helpers/Link'
 function About() {
   return (
     <>
-      <div className='flex justify-between p-3 pb-10 mx-3 bg-purple-600 md:mx-10 rounded-xl'>
+      <div className='flex justify-between p-3 py-10 mx-3 bg-purple-600 md:mx-10 rounded-xl'>
         <div className='w-full'>
-          <div className='text-3xl md:text-5xl font-poppins font-semibold text-[#380d79] m-6'>
+          {/* <div className='text-3xl md:text-5xl font-poppins font-semibold text-[#380d79] m-6'>
             About me
-          </div>
+          </div> */}
           <div className='text-[#f8f7fa] mx-2 md:mx-7 md:text-lg'>
             I am a 17 year old{' '}
             <span className='text-purple-900 font-poppins'>

@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
         <div className='mb-8 text-sm text-gray-400'>
           <Link href='https://github.com/dhravya/dhravya.dev'>
-            This website is Open source.
+            This website is open source.
           </Link>
         </div>
       </div>

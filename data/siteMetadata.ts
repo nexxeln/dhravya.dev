@@ -1,15 +1,16 @@
 const siteMetadata = {
-  title: "Dhravya Shah's blog",
+  title: 'Dhravya Shah | Blog',
   author: 'Dhravya Shah',
   headerTitle: 'Dhravya Shah',
   description:
     'A blog where I write about my coding journey, tips, experiences , fun, everything.',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'system',
   siteUrl: 'https://dhravya.dev',
   siteRepo: 'https://github.com/dhravya/dhravya.dev',
-  siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  siteLogo: '/static/images/icon.png',
+  favicon: '/favicon.ico',
+  image: '/static/images/icon.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'hello@dhravya.dev',
   github: 'https://github.com/dhravya',

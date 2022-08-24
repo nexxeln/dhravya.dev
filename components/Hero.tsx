@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -167,17 +168,15 @@ function Hero({ showElements = true }: { showElements: boolean }) {
               Mail
             </a>
 
-            {/* @ts-ignore */}
-            <Link passHref className='cursor-pointer' href='/blog'>
-              <div className='flex px-3 py-2 rounded-md shadow-md bg-slate-100 text-slate-800 shadow-slate-300'>
+            <Link passHref href='/blog'>
+              <a className='flex px-3 py-2 rounded-md shadow-md bg-slate-100 text-slate-800 shadow-slate-300'>
                 Blog
-              </div>
+              </a>
             </Link>
-            {/* @ts-ignore */}
-            <Link passHref className='cursor-pointer' href='/about'>
-              <div className='flex px-3 py-2 rounded-md shadow-md bg-slate-100 text-slate-800 shadow-slate-300'>
+            <Link passHref href='/about'>
+              <a className='flex px-3 py-2 rounded-md shadow-md bg-slate-100 text-slate-800 shadow-slate-300'>
                 About me
-              </div>
+              </a>
             </Link>
           </div>
           <div className='flex gap-2'>

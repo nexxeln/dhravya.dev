@@ -18,7 +18,7 @@ function Navbar() {
             width={48}
             height={48}
             alt='Dhravya Shah'
-            src={'/static/icon.png'}
+            src={'/static/images/icon.png'}
             className='w-12 h-12'
           />
           <div

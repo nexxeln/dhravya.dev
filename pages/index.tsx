@@ -55,7 +55,10 @@ export default function Home({
       </div>
       {siteMetadata.newsletter.provider !== '' && (
         <div className='flex items-center justify-center pt-4'>
-          <NewsletterForm title='Subscribe to Wow, Tech! Newsletter' />
+          <NewsletterForm
+            title='Subscribe to Wow, Tech! Newsletter'
+            description='Get a curated list of the coolest websites, tech news, memes, products right in your inbox.'
+          />
         </div>
       )}
     </div>

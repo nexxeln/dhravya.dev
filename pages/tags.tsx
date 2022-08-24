@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import Link from '@/components/helpers/Link'
 import { PageSEO } from '@/components/helpers/SEO'
 import Tag from '@/components/helpers/Tag'
@@ -20,14 +21,16 @@ export default function Tags({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
-    <>
+    <div className='bg-purplishBackground'>
       <PageSEO
         title={`Tags - ${siteMetadata.author}`}
         description='Things I blog about'
       />
-      <div className='flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0'>
+
+      <Navbar />
+      <div className='flex flex-col min-h-screen items-start justify-start divide-y divide-gray-700 md:flex-row md:mt-32 md:justify-center md:space-x-6 md:divide-y-0 mx-5 md:mx-0'>
         <div className='space-x-2 pt-6 pb-8 md:space-y-5'>
-          <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14'>
+          <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14'>
             Tags
           </h1>
         </div>
@@ -39,7 +42,7 @@ export default function Tags({
                 <Tag text={t} />
                 <Link
                   href={`/tags/${kebabCase(t)}`}
-                  className='-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300'
+                  className='-ml-2 text-sm font-semibold uppercase text-gray-300'
                 >
                   {` (${tags[t]})`}
                 </Link>
@@ -48,6 +51,6 @@ export default function Tags({
           })}
         </div>
       </div>
-    </>
+    </div>
   )
 }
