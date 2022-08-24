@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&family=Poppins&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply md:scrollbar-thin md:scrollbar-thumb-white;
+}
 
 .task-list-item::before {
   @apply hidden;

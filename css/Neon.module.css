@@ -1,0 +1,25 @@
+.animateFlicker {
+  animation: flickerText 5s infinite alternate;
+}
+
+/* Animate neon flicker */
+@keyframes flickerText {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.1rem -0.1rem 0.5rem #aeaeae, 0rem 0rem 0.5rem #aeaeae,
+      0 0 0rem #aeaeae, 0 0 0rem #aeaeae, 0 0 0rem #aeaeae, 0 0 0rem #aeaeae,
+      0 0 3rem #afafafaf;
+  }
+
+  20%,
+  69%,
+  71% {
+    text-shadow: none;
+  }
+}

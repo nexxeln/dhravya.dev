@@ -1,11 +1,11 @@
 import { getMDXComponent } from 'mdx-bundler/client'
 import React, { useMemo } from 'react'
 
-import Image from './Image'
-import CustomLink from './Link'
 import { BlogNewsletterForm } from './NewsletterForm'
-import Pre from './Pre'
-import TOCInline from './TOCInline'
+import Image from './helpers/Image'
+import CustomLink from './helpers/Link'
+import Pre from './helpers/Pre'
+import TOCInline from './helpers/TOCInline'
 
 import type { ComponentMap } from 'mdx-bundler/client'
 

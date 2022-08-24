@@ -1,3 +1,5 @@
+export type Topic = 'project' | 'experience' | 'programming'
+
 export type PostFrontMatter = {
   title: string
   date: string
@@ -11,4 +13,5 @@ export type PostFrontMatter = {
   canonicalUrl?: string
   slug: string
   fileName: string
+  topic?: Topic
 }

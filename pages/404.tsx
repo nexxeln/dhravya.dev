@@ -1,4 +1,4 @@
-import Link from '@/components/Link'
+import Link from '@/components/helpers/Link'
 
 export default function FourZeroFour() {
   return (

@@ -8,31 +8,16 @@ interface Props {
   frontMatter: PostFrontMatter
 }
 
-const UtterancesComponent = dynamic(
-  () => {
-    return import('@/components/comments/Utterances')
-  },
-  { ssr: false },
-)
 const GiscusComponent = dynamic(
   () => {
     return import('@/components/comments/Giscus')
   },
   { ssr: false },
 )
-const DisqusComponent = dynamic(
-  () => {
-    return import('@/components/comments/Disqus')
-  },
-  { ssr: false },
-)
 
 const Comments = ({ frontMatter }: Props) => {
   let term
-  switch (
-    siteMetadata.comment.giscusConfig.mapping ||
-    siteMetadata.comment.utterancesConfig.issueTerm
-  ) {
+  switch (siteMetadata.comment.giscusConfig.mapping) {
     case 'pathname':
       term = frontMatter.slug
       break
@@ -47,13 +32,6 @@ const Comments = ({ frontMatter }: Props) => {
     <div id='comment'>
       {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && (
         <GiscusComponent mapping={term} />
-      )}
-      {siteMetadata.comment &&
-        siteMetadata.comment.provider === 'utterances' && (
-          <UtterancesComponent issueTerm={term} />
-        )}
-      {siteMetadata.comment && siteMetadata.comment.provider === 'disqus' && (
-        <DisqusComponent frontMatter={frontMatter} />
       )}
     </div>
   )

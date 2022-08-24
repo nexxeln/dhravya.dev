@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import Link from '@/components/Link'
-import Pagination from '@/components/Pagination'
-import Tag from '@/components/Tag'
+import Link from '@/components/helpers/Link'
+import Pagination from '@/components/helpers/Pagination'
+import Tag from '@/components/helpers/Tag'
 import formatDate from '@/lib/utils/formatDate'
 
 import type { ComponentProps } from 'react'

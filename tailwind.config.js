@@ -10,6 +10,7 @@ module.exports = {
     './components/**/*.tsx',
     './layouts/**/*.tsx',
     './lib/**/*.ts',
+    './data/**/*.ts',
   ],
   darkMode: 'class',
   theme: {
@@ -25,11 +26,15 @@ module.exports = {
       },
       fontFamily: {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        mukta: ['Mukta', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         primary: colors.teal,
         //@ts-ignore
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
+
+        purplishBackground: '#380d79',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -164,5 +169,9 @@ module.exports = {
       }),
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwind-scrollbar'),
+  ],
 }

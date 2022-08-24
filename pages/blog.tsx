@@ -1,4 +1,4 @@
-import { PageSEO } from '@/components/SEO'
+import { PageSEO } from '@/components/helpers/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -38,7 +38,7 @@ export default function Blog({
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title='All Posts'
+        title='Blog'
       />
     </>
   )

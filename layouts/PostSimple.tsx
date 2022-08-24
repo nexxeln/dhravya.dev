@@ -1,9 +1,9 @@
-import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import { BlogSEO } from '@/components/SEO'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import SectionContainer from '@/components/SectionContainer'
 import Comments from '@/components/comments'
+import Link from '@/components/helpers/Link'
+import { BlogSEO } from '@/components/helpers/SEO'
+import SectionContainer from '@/components/helpers/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 

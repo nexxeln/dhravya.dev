@@ -1,5 +1,5 @@
-import Image from '@/components/Image'
-import { PageSEO } from '@/components/SEO'
+import Image from '@/components/helpers/Image'
+import { PageSEO } from '@/components/helpers/SEO'
 import SocialIcon from '@/components/social-icons'
 
 import type { ReactNode } from 'react'
