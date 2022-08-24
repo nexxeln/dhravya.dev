@@ -14,4 +14,5 @@ export type PostFrontMatter = {
   slug: string
   fileName: string
   topic?: Topic
+  ogImage?: string
 }

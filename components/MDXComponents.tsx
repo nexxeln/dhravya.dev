@@ -1,3 +1,4 @@
+import { MDXProvider } from '@mdx-js/react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import React, { useMemo } from 'react'
 
@@ -23,7 +24,6 @@ export const MDXComponents: ComponentMap = {
   pre: Pre,
   wrapper: Wrapper,
 
-  // 自定义 JSX 替换组件
   Image,
   TOCInline,
   BlogNewsletterForm,

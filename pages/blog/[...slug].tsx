@@ -1,6 +1,7 @@
 import fs from 'fs'
 
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import Navbar from '@/components/Navbar'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import {
@@ -75,7 +76,8 @@ export default function Blog({
   const { mdxSource, toc, frontMatter } = post
 
   return (
-    <>
+    <div className='dark bg-[#171717]'>
+      <Navbar />
       {'draft' in frontMatter && frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
@@ -96,6 +98,6 @@ export default function Blog({
           </PageTitle>
         </div>
       )}
-    </>
+    </div>
   )
 }

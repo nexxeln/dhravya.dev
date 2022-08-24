@@ -10,15 +10,17 @@ import type { ComponentProps } from 'react'
 import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 function Blogs({
-  total = 3,
+  total = 300,
   posts,
+  title,
   showMoreButton = false,
   fullscreen = false,
   initialDisplayPosts,
   pagination,
 }: {
-  total: number
+  total?: number
   posts: PostFrontMatter[]
+  title?: string
   showMoreButton?: boolean
   fullscreen?: boolean
   initialDisplayPosts?: PostFrontMatter[]
@@ -40,7 +42,7 @@ function Blogs({
   return (
     <div className={`px-5 pt-10 md:px-10 ${fullscreen && 'min-h-screen'}`}>
       <div className='flex items-center justify-center mt-6 text-3xl font-semibold text-purple-300 md:text-5xl font-poppins'>
-        {!fullscreen ? 'Latest Blogs' : 'Blogs'}
+        {title ? title : !fullscreen ? 'Latest Blogs' : 'Blogs'}
       </div>
 
       <div className='flex items-center justify-center mt-5 '>

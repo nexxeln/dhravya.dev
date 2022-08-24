@@ -5,16 +5,17 @@ lastMod: '2021-02-01'
 tags: ['next-js', 'tailwind', 'guide']
 draft: false
 summary: 'An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more'
-layout: PostSimple
 bibliography: references-data.bib
+layout: BlogLayout
 topic: programming
+ogImage: https://blog.dhravya.dev/static/52d6512d079cccc1aa7c3a5442a5a2ec/b5380/og-image.png
 ---
 
-## Overview
+## Table of Contents
 
 A post on the new features introduced in v1.0. New features:
 
-<TOCInline toc={props.toc} exclude='Overview' toHeading={2} />
+<TOCInline toc={props.toc} exclude='Table of Contents' asDisclosure />
 
 First load JS decreased from 43kB to 39kB despite all the new features added!^[With the new changes in Nextjs 12, first load JS increase to 45kB.]
 
@@ -341,7 +342,7 @@ Two components are exported, a default `NewsletterForm` and a `BlogNewsletterFor
 <BlogNewsletterForm title='Like what you are reading?' />
 ```
 
-<BlogNewsletterForm title='Like what you are reading?' />
+{/* <BlogNewsletterForm title='Like what you are reading?' /> */}
 
 The component relies on nextjs's [API routes](https://nextjs.org/docs/api-routes/introduction) which requires a server-side instance of nextjs to be setup and is not compatible with a 100% static site export. Users should either self-host or use a compatible platform like Vercel or Netlify which supports this functionality.
 

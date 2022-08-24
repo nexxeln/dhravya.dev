@@ -3,9 +3,13 @@ import siteMetadata from '@/data/siteMetadata'
 
 import Link from './helpers/Link'
 
-export default function Footer() {
+export default function Footer({
+  bg = 'bg-purplishBackground',
+}: {
+  bg?: string
+}) {
   return (
-    <footer className='bg-purplishBackground'>
+    <footer className={bg}>
       <div className='mt-16 flex flex-col items-center'>
         <div className='mb-3 flex space-x-4 bg-slate-300 rounded-md p-3'>
           <SocialIcon

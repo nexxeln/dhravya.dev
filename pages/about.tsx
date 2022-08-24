@@ -1,4 +1,6 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import Navbar from '@/components/Navbar'
+import SectionContainer from '@/components/helpers/SectionContainer'
 import { getFileBySlug } from '@/lib/mdx'
 
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -21,10 +23,15 @@ export default function About({
   const { mdxSource, frontMatter } = authorDetails
 
   return (
-    <MDXLayoutRenderer
-      layout={frontMatter.layout || DEFAULT_LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-    />
+    <div className='bg-purplishBackground dark'>
+      <Navbar />
+      <SectionContainer>
+        <MDXLayoutRenderer
+          layout={frontMatter.layout || DEFAULT_LAYOUT}
+          mdxSource={mdxSource}
+          frontMatter={frontMatter}
+        />
+      </SectionContainer>
+    </div>
   )
 }
