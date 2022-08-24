@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import ProgressBar from 'react-scroll-progress-bar'
 
 import PElement from '@/components/PElement'
 import PageTitle from '@/components/PageTitle'
@@ -90,6 +92,7 @@ export default function PostLayout({
 
   return (
     <div>
+      <ProgressBar bgcolor='#8e5cba' duration='0.2' />
       <BlogSEO
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         authorDetails={authorDetails}

@@ -26,7 +26,7 @@ const CustomLink = ({
     return <a href={href} {...rest}></a>
   }
 
-  return <a target='_blank' rel='noopener noreferrer' href={href} {...rest} />
+  return <a target='_blank' rel='noopener noreferrer' href={href} {...rest}></a>
 }
 
 export default CustomLink
