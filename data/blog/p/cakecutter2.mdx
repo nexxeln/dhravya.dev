@@ -1,0 +1,74 @@
+---
+title: A whole new developer ecosystem - Cakecutter 2
+summary: A couple months ago, I wrote a blog Introducing Cakecutter, which was, essentially, a modular version for create-python-project. I made them and forgot about it. But little did I know, small projects go a long way.
+date: 2022-06-17
+tags: ['golang']
+ogImage: /static/images/cakecutter2.webp
+canonicalUrl: 'https://dev.to/dhravya/a-whole-new-developer-ecosystem-cakecutter-5a3c'
+draft: false
+topic: project
+---
+
+A couple months ago, I wrote a blog [Introducing Cakecutter](https://dhravya.dev/blog/p/cakecutter), which was, essentially, a modular version for [create-python-project](https://github.com/Dhravya/create-python-project). Both of these projects were very easy, because they were just simple projects for me to practice the Rust programming language. I made them and forgot about it. But little did I know, small projects go a long way.
+
+But then, a couple days ago, [Yash](https://dev.to/kekdadabest) (who is a fellow admin of the [Coding Horizon community](https://discord.gg/z7MZYhmx6w) and an amazing developer), texted me, saying that he sees a lot of potential in my little pet project.
+
+> “Cakecutter is cool, let’s make it better”
+
+And that’s exactly what we did.
+
+We discussed new things we can implement, and decided to rewrite the entire thing in [Golang](https://go.dev)
+
+## Ok, but what exactly _is_ Cakecutter?
+
+In a nutshell, `Cakes` are templates, which contain _everything_ you need to set up a project. This includes:
+
+- The file structure of a project (for eg. some boilerplate files, `README`, `src/` folder) [[DOCS]](https://docs.cakes.run/3-create/#file-structure)
+- File content (for eg. Pre-generated licenses, or boilerplate code) [[DOCS]](https://docs.cakes.run/3-create/#file-content)
+- Commands to set up a project (for eg. Downloading dependencies, creating virtual environment) [[DOCS]](https://docs.cakes.run/3-create/#running-commands)
+
+Additionally, questions can be asked when setting up a project. Questions can be a selection between multiple things, or an input. Then, the answers to the questions can be used to fill in a template. [[DOCS]](https://docs.cakes.run/4-advance/)
+
+An example use case for this would be, asking the name of a user to auto-generate license, or you can even generate an entire README file with it!!
+
+You can create files based on answer to a question, for example, creating a file only if the project is a typescript project.
+
+And, you can even run commands based on answers. Example use case would be asking host OS to run setup commands!
+
+This is a hell lot of power and functionality in just ONE CakeFile! (Just like real cakes 😆)
+
+Have a look at the [Basic example cake](https://docs.cakes.run/5-example/) and you can also try out the [Python cake](https://cakes.run/cake/python)
+
+### Sold yet? Install cakecutter.
+
+Head over to [https://docs.cakes.run/1-install/](https://docs.cakes.run/1-install/), or use with NPX:
+
+```powershell
+npx cc
+```
+
+## These are not even the biggest updates.
+
+Like `create-react-app` , most people don’t like to make cakes. They like to eat them. We knew this, and a way to share cakes had to be made.
+
+So, we created a `publish` command, so you can publish _your_ cakes for others to use!
+
+Try out this command to instantly generate a very simple python project template. Now you don’t need to create cakes!
+
+```
+npx cc cut python
+```
+
+Also, we created the website [Cakes.run](https://cakes.run) where you can find the documentation, installation guidelines, and also browse the cakes created by others.
+
+To learn more about how to create cakes, [Read the docs](https://docs.cakes.run), and go through the [examples repository](https://github.com/cake-cutter/examples)
+
+## Your support is appreciated. Here’s how you can help
+
+The entire stack - from the API, website, CLI, Docs - Everything is open source. You can find them on the [Cake-cutter github organisation.](https://github.com/cake-cutter)
+
+⭐ Star all repositories to spread the word. Especially this one, the main CLI 👇🏻 https://github.com/cake-cutter/cc
+
+Follow Yash, the major contributor of this project, on DEV community and Github - [https://github.com/kekda-py](https://github.com/kekda-py)
+
+Follow me, Dhravya Shah on Github - [https://github.com/dhravya](https://github.com/dhravya)

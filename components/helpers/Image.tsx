@@ -7,8 +7,8 @@ type CompulSoryImageProps = ImageProps & {
   alt: string
 }
 
-const Image = ({ src, ...rest }: CompulSoryImageProps) => (
-  <NextImage src={src} {...rest} />
-)
+const Image = ({ src, ...rest }: CompulSoryImageProps) => {
+  return <NextImage src={src} {...rest} />
+}
 
 export default Image

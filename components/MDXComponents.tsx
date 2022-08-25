@@ -1,4 +1,3 @@
-import { MDXProvider } from '@mdx-js/react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import React, { useMemo } from 'react'
 

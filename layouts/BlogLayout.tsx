@@ -105,7 +105,7 @@ export default function PostLayout({
             <motion.div
               initial={{ x: -50 }}
               animate={{ x: 0 }}
-              transition={{ duration: 0.3, type: 'spring' }}
+              transition={{ duration: 0.3, type: 'spring', delay: 0.5 }}
               className='md:absolute z-10 relative md:right-10 md:bottom-20 top-10  md:top-auto md:mx-0'
             >
               <motion.div
@@ -128,7 +128,7 @@ export default function PostLayout({
             <motion.div
               initial={{ x: 50 }}
               animate={{ x: 0 }}
-              transition={{ duration: 0.3, type: 'spring' }}
+              transition={{ duration: 0.3, type: 'spring', delay: 0.5 }}
               className={`flex justify-between mx-8 md:mx-16 mt-5 p-8 md:p-20 rounded-xl  md:min-h-[75vh] md:w-[75vw]  ${
                 classes[topic ? topic : 'programming']
               }`}

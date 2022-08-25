@@ -16,7 +16,7 @@ import type { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import type { PostFrontMatter } from 'types/PostFrontMatter'
 import type { Toc } from 'types/Toc'
 
-const DEFAULT_LAYOUT = 'PostLayout'
+const DEFAULT_LAYOUT = 'BlogLayout'
 
 export async function getStaticPaths() {
   const posts = getFiles('blog')

@@ -1,0 +1,34 @@
+---
+title: 'I created a Twitter bot to take screenshots of tweets'
+summary: 'Often times, after seeing a tweet, I go to https://poet.so to take a screenshot of it. However, this was kinda time consuming and stuff like that, but poet.so doesnt even have an API, so I create a selenium script that (very quickly) uses poet.so to take screenshots of a tweet.'
+date: 2022-04-26
+tags: ['showdev', 'python']
+canonicalUrl: 'https://dev.to/dhravya/i-made-a-twitter-bot-to-take-beautiful-screenshots-of-a-tweet-3kk5'
+time: 1
+draft: false
+ogImage: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/15mab95t5cek1jzlpj3r.png
+topic: project
+---
+
+Often times, after seeing a tweet, I go to https://poet.so to take a screenshot of it. However, this was kinda time consuming and stuff like that, but poet.so doesn't even have an API, so I create a selenium script that (very quickly) uses poet.so to take screenshots of a tweet.
+
+To use the bot, simply reply to any tweet with @poet_this ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k3v64asw68icnuw7qr12.png)
+
+The project is shockingly simple, but super useful. It hardly took 20 minutes for me to make it (because I already had some experiences with the twitter API - [auto twitter banner changer](https://github.com/Dhravya/auto-twitter-banner) )
+
+in fact, it's so simple that this is all I needed to write (with a little bit of reverse engineering of the website and some keyboard tricks)
+
+```py
+    def get_poem(self, link, savepath="tweet.png"):
+        input_box = self.driver.find_element(by= "tag name", value="input")
+        input_box.send_keys(link + u'\ue007')
+        element = self.driver.find_element("xpath","//*[@data-export-hide]")
+
+        # Waiting for the image to load
+        time.sleep(5)
+        element.screenshot(savepath)
+```
+
+Anyways, I hope you like my little project. If you have any suggestions or issues, feel free to post them on github. The repository is public here: Please ⭐ this! Github - https://github.com/Dhravya/poet-this
+
+I'm considering options to host the bot too, but hosting anything using selenium is quite the pain so i'll try my best. For now it's online on my own computer

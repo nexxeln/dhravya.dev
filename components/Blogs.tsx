@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
+import { classes } from '@/data/clss'
+
 import PElement from './PElement'
 import Pagination from './helpers/Pagination'
 
@@ -29,7 +31,7 @@ function Blogs({
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent =
-      frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+      frontMatter.title + frontMatter.summary + frontMatter.tags?.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -88,9 +90,7 @@ function Blogs({
                   (blog.summary.length > 100 ? '...' : '')
                 }
                 topic={blog.topic}
-                className={
-                  blog.topic == 'programming' ? 'bg-purple-300' : 'bg-blue-300'
-                }
+                className={classes[blog.topic]}
                 href={`/blog/${blog.slug}`}
               />
             )

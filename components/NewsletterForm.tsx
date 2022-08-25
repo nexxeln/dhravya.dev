@@ -43,9 +43,9 @@ const NewsletterForm = ({
   }
 
   return (
-    <div className='rounded-lg w-full flex flex-col md:flex-row items-center justify-between bg-slate-800 p-5 py-10 mx-10'>
+    <div className='rounded-lg w-full flex flex-col md:flex-row items-center justify-between bg-slate-800 p-3 md:p-5 py-10 mx-5 md:mx-10'>
       <div>
-        <h3 className='pb-1 text-3xl font-mukta font-semibold text-gray-100'>
+        <h3 className='pb-1 text-xl md:text-3xl font-mukta font-semibold text-gray-100'>
           {title}
         </h3>
         <div className='pb-1 text-gray-200 text-sm max-w-fit'>
@@ -61,7 +61,7 @@ const NewsletterForm = ({
             </label>
             <input
               autoComplete='email'
-              className='w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black'
+              className='w-52 md:w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black'
               id='email-input'
               name='email'
               placeholder={
@@ -75,7 +75,7 @@ const NewsletterForm = ({
           </div>
           <div className='mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3'>
             <button
-              className={`w-full rounded-md bg-purple-600 py-2 px-4 font-medium text-white sm:py-0 ${
+              className={`w-52 md:w-72 rounded-md bg-purple-600 py-2 px-4 font-medium text-white sm:py-0 ${
                 subscribed
                   ? 'cursor-default'
                   : 'hover:bg-primary-700 dark:hover:bg-primary-400'

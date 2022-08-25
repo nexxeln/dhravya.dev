@@ -29,6 +29,7 @@ function Projects({
               <PElement
                 key={project.title}
                 topic='project'
+                projectPage={true}
                 custom_icon={
                   project.iconType === 'image' ? (
                     <Image

@@ -8,10 +8,11 @@ import type { Topic } from 'types/PostFrontMatter'
 function PElement({
   className,
   title,
-  topic = 'programming',
+  topic,
   description,
   custom_icon,
   href,
+  projectPage = false,
   tags = [],
 }: {
   className?: string
@@ -21,6 +22,7 @@ function PElement({
   custom_icon?: React.ReactNode
   href?: string
   tags?: string[]
+  projectPage?: boolean
 }) {
   return (
     <Link passHref href={href?.startsWith('/') ? href : `/`}>
@@ -50,8 +52,8 @@ function PElement({
             {title}
           </div>
           <div
-            className={`mx-2 mb-5 text-slate-800 md:mx-5 ${
-              topic === 'project' && 'text-slate-200'
+            className={`mx-2 mb-5 md:mx-5 ${
+              projectPage ? 'text-white' : 'text-slate-800'
             }`}
           >
             {description}
