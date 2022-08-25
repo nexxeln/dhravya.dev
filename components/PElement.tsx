@@ -47,7 +47,10 @@ function PElement({
             className={`flex font-semibold justify-start mx-5 mt-4 mb-8 ${
               // According to title length, change font size
               title?.split(' ').length > 12 ? 'text-xl' : 'text-2xl'
-            } font-poppins`}
+            } 
+            ${projectPage ? 'text-white' : 'text-slate-800'}
+            
+            font-poppins`}
           >
             {title}
           </div>
