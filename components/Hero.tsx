@@ -105,7 +105,7 @@ function Hero({ showElements = true }: { showElements: boolean }) {
             ease: 'easeInOut',
             delay: Math.random() * 3,
           }}
-          className='absolute text-white rotate-90 right-2 bottom-6'
+          className='absolute text-white rotate-90 right-4 md:right-2 bottom-6'
         >
           <div
             className='flex transform'
