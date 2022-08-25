@@ -145,7 +145,7 @@ export default function PostLayout({
                     )}
                   </span>
                 </div>
-                <div className='mt-5'>
+                <div className='mt-5 text-black'>
                   <h1 className='font-poppins font-extrabold text-4xl mb-5'>
                     {title}
                   </h1>
