@@ -3,18 +3,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import { classes } from '@/data/clss'
 import projectsData from '@/data/projectsData'
 
 import PElement from './PElement'
+
+import type { PostFrontMatter } from 'types/PostFrontMatter'
 
 function Projects({
   total = 3,
   showMoreButton = false,
   fullscreen = false,
+  displayPosts,
 }: {
   total: number
   showMoreButton?: boolean
   fullscreen?: boolean
+  displayPosts?: PostFrontMatter[]
 }) {
   return (
     <div className={`px-5 pt-10 md:px-10 ${fullscreen && 'min-h-screen'}`}>
@@ -47,10 +52,40 @@ function Projects({
                 title={project.title}
                 description={project.description}
                 className={project.className}
+                href={project.href}
               />
             )
           })
           .filter(Boolean)}
+
+        {displayPosts && (
+          <div>
+            <div className='flex items-center justify-center mt-6 text-3xl font-semibold text-purple-300 md:text-5xl font-poppins'>
+              Smaller projects
+            </div>
+            <div className='md:flex-wrap md:flex justify-evenly'>
+              {displayPosts
+                .map((blog, index) => {
+                  if (index >= total) return null
+                  return (
+                    <PElement
+                      key={blog.title}
+                      tags={blog.tags}
+                      title={blog.title}
+                      description={
+                        blog.summary.slice(0, 100) +
+                        (blog.summary.length > 100 ? '...' : '')
+                      }
+                      topic={blog.topic}
+                      className={classes[blog.topic]}
+                      href={`/blog/${blog.slug}`}
+                    />
+                  )
+                })
+                .filter(Boolean)}
+            </div>
+          </div>
+        )}
       </div>
       {showMoreButton && (
         <div className='flex w-full justify-end mr-8 text-white mt-4'>

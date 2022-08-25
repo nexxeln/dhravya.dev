@@ -1,6 +1,6 @@
 import { visit } from 'unist-util-visit'
 
-import type { Parent } from 'unist'
+import type { Parent } from 'unist-util-visit'
 
 export default function remarkCodeTitles() {
   return (tree: Parent & { lang?: string }) =>

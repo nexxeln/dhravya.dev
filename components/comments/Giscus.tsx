@@ -45,6 +45,7 @@ const Giscus = ({ mapping }: Props) => {
       'data-emit-metadata',
       siteMetadata.comment.giscusConfig.metadata,
     )
+    script.setAttribute('data-loading', 'lazy')
     script.setAttribute('data-theme', commentsTheme)
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
@@ -66,11 +67,16 @@ const Giscus = ({ mapping }: Props) => {
     LoadComments()
   }, [LoadComments])
 
+  useEffect(
+    () => {
+      LoadComments()
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
+
   return (
     <div className='pt-6 pb-6 text-center text-gray-700 dark:text-gray-300'>
-      {enableLoadComments && (
-        <button onClick={LoadComments}>Load Comments</button>
-      )}
       <div className='giscus' id={COMMENTS_ID} />
     </div>
   )

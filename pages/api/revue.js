@@ -1,24 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-
-// eslint-disable-next-line import/no-anonymous-default-export
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req, res) => {
   const { email } = req.body
+
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })
   }
 
   try {
-    const API_KEY = process.env.BUTTONDOWN_API_KEY
-    const buttondownRoute = `${process.env.BUTTONDOWN_API_URL}subscribers`
-    const response = await fetch(buttondownRoute, {
-      body: JSON.stringify({
-        email,
-      }),
+    const API_KEY = process.env.REVUE_API_KEY
+    const revueRoute = `${process.env.REVUE_API_URL}subscribers`
+
+    const response = await fetch(revueRoute, {
+      method: 'POST',
       headers: {
         Authorization: `Token ${API_KEY}`,
         'Content-Type': 'application/json',
       },
-      method: 'POST',
+      body: JSON.stringify({ email, double_opt_in: false }),
     })
 
     if (response.status >= 400) {

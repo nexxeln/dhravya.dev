@@ -3,13 +3,13 @@ import fs from 'fs'
 import sizeOf from 'image-size'
 import { visit } from 'unist-util-visit'
 
-import type { Parent, Node, Literal } from 'unist'
+import type { Parent, Node } from 'unist-util-visit'
 
 type ImageNode = Parent & {
   url: string
   alt: string
   name: string
-  attributes: (Literal & { name: string })[]
+  attributes: (any & { name: string })[]
 }
 
 export default function remarkImgToJsx() {

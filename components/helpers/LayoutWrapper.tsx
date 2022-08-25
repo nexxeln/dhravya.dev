@@ -11,7 +11,9 @@ interface Props {
 const LayoutWrapper = ({ children }: Props) => {
   const router = useRouter()
 
-  const isBlogPage = router.pathname.startsWith('/blog/')
+  const isBlogPage =
+    router.pathname.startsWith('/blog/') &&
+    !router.pathname.startsWith('/blog/page')
   return (
     <div>
       <div className='flex h-screen flex-col justify-between'>

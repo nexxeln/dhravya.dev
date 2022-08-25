@@ -14,7 +14,8 @@
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./pages ./components ./lib ./layouts ./scripts",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty .",
     "prettier": "prettier --check --write \"(pages|components|lib|layouts|scripts)/**/*\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "compose": "esno ./scripts/compose.ts"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
