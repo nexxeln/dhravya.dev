@@ -11,7 +11,7 @@ const siteMetadata = {
   siteLogo: '/static/images/icon.png',
   favicon: '/favicon.ico',
   image: '/static/images/icon.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/twitter-banner.png',
   email: 'hello@dhravya.dev',
   github: 'https://github.com/dhravya',
   twitter: 'https://twitter.com/DhravyaShah',
