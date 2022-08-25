@@ -6,7 +6,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app platform.twitter.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app platform.twitter.com umami.dhravya.dev;
   style-src 'self' 'unsafe-inline' fonts.googleapis.com;
   img-src * blob: data:;
   media-src 'none';
