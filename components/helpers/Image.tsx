@@ -8,7 +8,7 @@ type CompulSoryImageProps = ImageProps & {
 }
 
 const Image = ({ src, ...rest }: CompulSoryImageProps) => {
-  return <NextImage src={src} {...rest} />
+  return <NextImage src={src} {...rest} priority />
 }
 
 export default Image
